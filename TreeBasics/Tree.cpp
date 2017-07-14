@@ -1,4 +1,5 @@
 #include"Tree.h"
+#include<iostream>
 
 Tree::Tree()
 {
@@ -93,4 +94,45 @@ void Tree::printLayerTree(TreeNode *ptr,int h)
           printLayerTree(ptr->getLeftPtr(),h-1);
           printLayerTree(ptr->getRightPtr(),h-1);
         }
+}
+void Tree::PreOrder()
+{
+	PreOrder(this->root);
+}
+void Tree::InOrder()
+{
+	InOrder(this->root);
+}
+void Tree::PostOrder()
+{
+	PostOrder(this->root);
+}
+
+void Tree::PreOrder(TreeNode * ptr)
+{
+	if(ptr)
+	std::cout<<ptr->getNodeData()<<" ";
+	if(ptr->getLeftPtr())
+	PreOrder(ptr->getLeftPtr());
+	if(ptr->getRightPtr())
+	PreOrder(ptr->getRightPtr());
+}
+
+void Tree::PostOrder(TreeNode * ptr)
+{
+	if(ptr->getLeftPtr())
+	PostOrder(ptr->getLeftPtr());
+	if(ptr->getRightPtr())
+	PostOrder(ptr->getRightPtr());
+	if(ptr)
+	std::cout<<ptr->getNodeData()<<" ";
+}
+void Tree::InOrder(TreeNode * ptr)
+{
+	if(ptr->getLeftPtr()!=nullptr)
+	InOrder(ptr->getLeftPtr());
+	if(ptr!=nullptr)
+	std::cout<<ptr->getNodeData()<<" ";
+	if(ptr->getRightPtr()!=nullptr)
+	InOrder(ptr->getRightPtr());
 }
