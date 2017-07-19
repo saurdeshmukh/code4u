@@ -26,7 +26,7 @@ void InOrder(TreeNode*);
 void PreOrder(TreeNode*);
 
 void PostOrder(TreeNode*);
-
+void TopView(TreeNode*,int);
 public:
 Tree();
 
@@ -50,4 +50,5 @@ void PreOrder();
 
 void PostOrder();
 
+void TopView();
 };

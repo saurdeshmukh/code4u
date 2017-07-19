@@ -135,4 +135,43 @@ void Tree::InOrder(TreeNode * ptr)
 	std::cout<<ptr->getNodeData()<<" ";
 	if(ptr->getRightPtr()!=nullptr)
 	InOrder(ptr->getRightPtr());
+
+}
+
+void Tree::TopView(TreeNode* ptr,int ch)
+{
+   if(ch==0)
+   {
+      if(ptr!=nullptr)
+      {
+	
+	TopView(ptr->getLeftPtr(),0);
+	std::cout<<ptr->getNodeData()<<" ";
+      }
+      else
+	      return;
+   }
+   else
+   {
+	   if(ptr!=nullptr)
+	   {
+		   std::cout<<ptr->getNodeData()<<" ";
+		   TopView(ptr->getRightPtr(),1);
+	   }
+	   else
+		   return;
+
+   }
+}
+
+
+void Tree::TopView()
+{
+	if(this->root !=nullptr)
+	{
+	   TopView((this->root)->getLeftPtr(),0);
+	   std::cout<<(this->root)->getNodeData()<<" ";
+	   TopView((this->root)->getRightPtr(),1);
+	}
+
 }
