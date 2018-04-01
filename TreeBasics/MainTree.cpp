@@ -35,6 +35,7 @@ bTree->PostOrder();
 cout<<"\n TopView:";
 bTree->TopView();
 
+cout<<"\nNumnber of Nodes:"<<bTree->getNodeCount()<<endl;
 
 return 0;
 }

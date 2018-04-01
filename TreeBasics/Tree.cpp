@@ -4,12 +4,10 @@
 Tree::Tree()
 {
  this->root=new TreeNode();
- this->NodeCount++;
 }
 Tree::Tree(int d)
 {
 this->root=new TreeNode(d);
-this->NodeCount++;
 }
 Tree::~Tree()
 {
@@ -22,7 +20,17 @@ void Tree::addNode(int d)
 }
 int Tree::getNodeCount()
 {
-return this->NodeCount;
+return NodeCount(this->root);
+}
+
+int Tree::NodeCount(TreeNode *ptr)
+{
+	if(ptr==nullptr)
+		return 0;
+	else
+	{
+		return 1+NodeCount(ptr->getRightPtr())+NodeCount(ptr->getLeftPtr());
+	}
 }
 
 void Tree::addNodeTree(int d,TreeNode* ptr)
