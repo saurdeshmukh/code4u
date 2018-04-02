@@ -37,7 +37,7 @@ std::shared_ptr<uint8_t> readAndAllocatePGM8(std::size_t & numberOfRows,std::siz
         std::size_t const numberOfPixels = numberOfRows * numberOfColumns;
    
 	
-    	std::shared_ptr<uint8_t> imageBuffer(new uint8_t[numberOfPixels]);       
+    	std::shared_ptr<uint8_t> imageBuffer(new uint8_t[numberOfPixels],std::default_delete<uint8_t>());       
 	
         inputStream.read(reinterpret_cast<char*>(imageBuffer.get()), numberOfPixels);
          
@@ -66,8 +66,15 @@ int writePGM8(std::string const& fileName, std::shared_ptr<uint8_t> const imageB
     		return -2;
 	}
 	std::size_t const numberOfPixels = numberOfRows * numberOfColumns;
-	for(int i=0;i<(int)numberOfColumns;++i)
-		outputStream.write(reinterpret_cast<const char*>(imageBuffer.get()), numberOfRows);
+	
+	//Storing into raw_pointer and itering using raw_pointer to write the output.pgm file
+
+	char * sptr=reinterpret_cast<char*>(imageBuffer.get());
+	for(int i=0;i<(int)numberOfRows;i=i+1)
+	{
+		outputStream.write(sptr, numberOfColumns);
+		sptr+=numberOfColumns;
+	}
 	
 	if(!outputStream) 
 	{
