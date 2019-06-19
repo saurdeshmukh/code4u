@@ -6,4 +6,11 @@ Reverse the singly linked List.
 Question 2.
 Reverse the String
 	-using pointers
-	-using STL 
+	-in C 
+
+Question 19.
+Check the given number is Palindrome
+	-using C 
+Question 18.
+Check the given string is Palidrome
+	-using C
