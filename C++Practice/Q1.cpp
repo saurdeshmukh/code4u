@@ -63,20 +63,21 @@ public:
 		
 		}
 	}
-	void reverse(){
-		Node *current;
-		Node *prev;
-		Node *next;
-		current=this->head;
-		prev=nullptr;
-		while(current){
-			next=current->getNext();
+	void reverse()
+	{
+		Node* prev=nullptr;
+		Node* next;
+		Node* current;
+		current = this-> head;
+		while(current)
+		{
+			next = current->getNext();
 			current->setNext(prev);
-			prev=current;
-			current=next;
+			prev = current;
+			current = next;
 		}
-		this->head=prev;;
-	}	
+		this->head = prev;
+	}
 };
 
 int main()
