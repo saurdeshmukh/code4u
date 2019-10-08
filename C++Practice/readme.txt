@@ -28,3 +28,8 @@ Valid Parathesis string
 
 Question 8.
 banana --> a3b1n2
+
+Question 9.
+Inorder traversal in BST
+
+
