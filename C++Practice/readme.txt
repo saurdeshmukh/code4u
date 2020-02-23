@@ -32,4 +32,16 @@ banana --> a3b1n2
 Question 9.
 Inorder traversal in BST
 
+Question 14.
+convert string contraining integer to Integer value "23" -> 23   (cctype header with isdigit(ch) )
+
+Question 15.
+Check given number is power of 2
+
+QUestion 17.
+find nth number in Fibonacci series
+
+
+Question 21.
+Convert given integer to binary number in string
 
