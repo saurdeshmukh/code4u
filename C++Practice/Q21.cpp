@@ -2,6 +2,17 @@
 
 using namespace std;
 
+void reverseString(string & st)
+{
+	char ch;
+	for(int i=0;i<st.length()/2;i++){
+		ch=st[i];
+		st[i]=st[st.length()-i-1];
+		st[st.length()-i-1]=ch;
+	}
+		
+}
+
 string convertToBinary(int num){
 	string binStr = "";
 	while(num){
@@ -11,6 +22,7 @@ string convertToBinary(int num){
 			binStr = binStr + "0";
 		num = num / 2;
 	}
+	reverseString(binStr);
 	return binStr;
 }
 
