@@ -1,8 +1,9 @@
 #include<stdlib.h>
 #include<iostream>
+#include<map>
 using namespace std;
 int main()
 {
-	int *ptr=malloc(16);
+	int *ptr=(int*)malloc(16);
 	cout<<ptr<<endl;
 }
