@@ -21,7 +21,7 @@ int main(){
                 scanf("%s",str1);
                 printf("Input 2nd string: ");
                 scanf("%s",str2);
-                initialized = true;2
+                initialized = true;
                 break;
             case '2':
                 if(!initialized){
