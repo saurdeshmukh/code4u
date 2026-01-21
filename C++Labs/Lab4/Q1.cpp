@@ -44,6 +44,10 @@ class CComplex
         {
             return objCount;
         }
+        CComplex add(const CComplex &c) const
+        {
+            return CComplex(this->real + c.real, this->imag + c.imag);
+        }
 };
 
 // Initialize static member variable to zero
@@ -60,6 +64,9 @@ int main()
     cout << "Total Complex Objects Created: " << CComplex::GetCount() << endl;
 
     CComplex c2(5, 6);
+    CComplex c3 = c1.add(c2);
+    cout << "After Addition: ";
+    c3.Display();
     cout << "Total Complex Objects Created: " << CComplex::GetCount() << endl;
     return 0;
 }
